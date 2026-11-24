@@ -14,6 +14,8 @@ Every effect was rebuilt frame by frame from real short-form edits: the timing, 
 
 **Browse all of them:** [the gallery](https://robj1925.github.io/vfx-for-claude-code/) (search box, every demo playing), or scroll to [the effect list](#the-effects).
 
+**Want the full AI editing workflow these effects plug into?** Scripts, cuts, captions, graphics and thumbnails, step by step, plus help when you get stuck: 🎞️ [AI Academy on Skool](https://www.skool.com/ai-academy-with-robby-6849/about)
+
 ## What you need
 
 - macOS (the fonts and the person matte use Apple system tools)
@@ -151,6 +153,10 @@ The method for each effect: watch the reference edit frame by frame (duplicate f
 4. Run `python3 make_gallery.py` (updates the gallery and the tables in this README).
 
 Pull requests with new effects are welcome.
+
+## Community
+
+Questions, renders to share, or the rest of the pipeline (the Short Form Editor, the Long Form Editor, captions and thumbnails): [AI Academy on Skool](https://www.skool.com/ai-academy-with-robby-6849/about). Every post gets an answer within 24 hours.
 
 ## License
 

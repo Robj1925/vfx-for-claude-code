@@ -54,7 +54,7 @@ article{{display:flex;gap:18px;background:#1b1b1b;border-radius:14px;padding:14p
 .vids{{display:flex;gap:8px}} img{{width:180px;height:320px;object-fit:cover;border-radius:10px;background:#000}}
 h3{{margin:0 0 6px}} h3 b{{color:#f0a060}} .tags span{{display:inline-block;background:#2a2a2a;border-radius:20px;padding:2px 10px;margin:2px;font-size:13px}}
 code{{display:block;background:#000;padding:8px;border-radius:8px;margin-top:8px;font-size:12px;white-space:pre-wrap}}
-</style></head><body><h1>VFX for Claude Code</h1><p>40 video effects as Python code. Ask Claude Code for one in plain words. <a style="color:#f0a060" href="https://github.com/Robj1925/vfx-for-claude-code">GitHub</a></p>
+</style></head><body><h1>VFX for Claude Code</h1><p>40 video effects as Python code. Ask Claude Code for one in plain words. <a style="color:#f0a060" href="https://github.com/Robj1925/vfx-for-claude-code">GitHub</a> · <a style="color:#f0a060" href="https://www.skool.com/ai-academy-with-robby-6849/about">🎞️ The full AI editing workflow, step by step (AI Academy on Skool)</a></p>
 <nav>{''.join(nav)}</nav>
 <input id="q" placeholder="Search: glow, glitch, step in, premium..." oninput="f()">
 {''.join(body)}
