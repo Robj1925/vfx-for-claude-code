@@ -1,5 +1,7 @@
 # VFX for Claude Code
 
+> 🎞️ **Get my full AI editing workflow, step by step:** scripts, cuts, captions, graphics and thumbnails, plus help when you get stuck. [Join AI Academy on Skool](https://www.skool.com/ai-academy-with-robby-6849/about)
+
 40 video effects (transitions, animated titles, looks and overlays) written as plain Python. Ask Claude Code for one in your own words, "put a light leak between these two clips" or "glitch title on the hook", and it finds the effect, runs it on your footage and gives you the file.
 
 Every effect was rebuilt frame by frame from real short-form edits: the timing, the curves and the number of frames match the reference, not a guess. No After Effects, no Premiere, no plugins. Each one renders a normal MP4 that you drop into any editor.
@@ -13,8 +15,6 @@ Every effect was rebuilt frame by frame from real short-form edits: the timing, 
 </p>
 
 **Browse all of them:** [the gallery](https://robj1925.github.io/vfx-for-claude-code/) (search box, every demo playing), or scroll to [the effect list](#the-effects).
-
-**Want the full AI editing workflow these effects plug into?** Scripts, cuts, captions, graphics and thumbnails, step by step, plus help when you get stuck: 🎞️ [AI Academy on Skool](https://www.skool.com/ai-academy-with-robby-6849/about)
 
 ## What you need
 
