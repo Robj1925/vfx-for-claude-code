@@ -1,0 +1,216 @@
+<!doctype html><html><head><meta charset="utf-8"><title>VFX for Claude Code</title>
+<meta name="viewport" content="width=device-width,initial-scale=1"><style>
+body{font:15px/1.5 -apple-system,Helvetica,sans-serif;background:#111;color:#eee;margin:0;padding:24px}
+h1{margin:0 0 6px} nav a{color:#f0a060;margin-right:18px} input{width:340px;padding:8px;border-radius:8px;border:0;margin:12px 0}
+section{margin-top:28px} h2{border-bottom:1px solid #333;padding-bottom:6px} .blurb{color:#999}
+article{display:flex;gap:18px;background:#1b1b1b;border-radius:14px;padding:14px;margin:14px 0}
+.vids{display:flex;gap:8px} img{width:180px;height:320px;object-fit:cover;border-radius:10px;background:#000}
+h3{margin:0 0 6px} h3 b{color:#f0a060} .tags span{display:inline-block;background:#2a2a2a;border-radius:20px;padding:2px 10px;margin:2px;font-size:13px}
+code{display:block;background:#000;padding:8px;border-radius:8px;margin-top:8px;font-size:12px;white-space:pre-wrap}
+</style></head><body><h1>VFX for Claude Code</h1><p>40 video effects as Python code. Ask Claude Code for one in plain words. <a style="color:#f0a060" href="https://github.com/Robj1925/vfx-for-claude-code">GitHub</a></p>
+<nav><a href="#transition">Transitions (8)</a><a href="#title">Titles and text (15)</a><a href="#fx">Looks and overlays (17)</a></nav>
+<input id="q" placeholder="Search: glow, glitch, step in, premium..." oninput="f()">
+<section id="transition"><h2>Transitions</h2><p class="blurb">Joins between two clips.</p><article id="T01"><div class="vids"><img src="gifs/T01-light-leak-glow-transition-warm.gif" loading="lazy" alt="Light leak glow transition"><img src="gifs/T01-light-leak-glow-transition-prism.gif" loading="lazy" alt="Light leak glow transition"></div><div class="txt">
+<h3><b>T01</b> Light leak glow transition</h3>
+<p>A soft coloured glow swells over the end of clip A, peaks on the cut, washes over clip B and is gone 5 frames later.</p>
+<p><i>Best for:</i> energy cut between b-roll shots, hook into the body, beat drops. <i>Mood:</i> energetic, warm, music video, travel. <i>Length:</i> 12 frames.</p>
+<div class="tags"><span>light leak</span><span>glow</span><span>flare</span><span>overlay transition</span><span>film burn</span><span>flash</span><span>prism</span><span>lens flare</span><span>warm leak</span><span>red leak</span></div>
+<code>python3 effects/transitions.py leak A.mov --cut &lt;s in A&gt; B.mov --b-in &lt;s in B&gt; --look warm|prism -o out.mp4</code></div></article><article id="T02"><div class="vids"><img src="gifs/T02-roto-silhouette-step-in-transition.gif" loading="lazy" alt="Roto silhouette step-in transition"></div><div class="txt">
+<h3><b>T02</b> Roto silhouette step-in transition</h3>
+<p>The subject&#x27;s outline from the next shot appears over clip A as a flat cream silhouette for 3 frames, then 1 frame in true colour, then the cut. The subject seems to step into the shot.</p>
+<p><i>Best for:</i> b-roll or a graphic into the talking head; works best when B is the subject on camera. <i>Mood:</i> clean, premium, playful. <i>Length:</i> 4 frames.</p>
+<div class="tags"><span>roto</span><span>rotoscope</span><span>silhouette</span><span>cutout</span><span>step in</span><span>walk in</span><span>person appears</span><span>magic mask transition</span><span>ghost</span></div>
+<code>python3 effects/transitions.py roto A.mov --cut &lt;s in A&gt; B.mov --b-in &lt;s in B&gt; -o out.mp4</code></div></article><article id="T03"><div class="vids"><img src="gifs/T03-blur-blink-camera-transition.gif" loading="lazy" alt="Blur blink camera transition"></div><div class="txt">
+<h3><b>T03</b> Blur blink camera transition</h3>
+<p>Zoom blur and a dark vignette build over 3 frames, peak on the cut and fade over 3 frames: a camera blink.</p>
+<p><i>Best for:</i> cinematic cut between two moving shots, scene change, time jump. <i>Mood:</i> cinematic, smooth, subtle. <i>Length:</i> 7 frames.</p>
+<div class="tags"><span>blur</span><span>radial blur</span><span>zoom blur</span><span>motion blur</span><span>blink</span><span>camera blink</span><span>vignette</span><span>whip</span><span>cinematic transition</span></div>
+<code>python3 effects/transitions.py blink A.mov --cut &lt;s in A&gt; B.mov --b-in &lt;s in B&gt; -o out.mp4</code></div></article><article id="T04"><div class="vids"><img src="gifs/T04-zoom-out-camera-move-transition.gif" loading="lazy" alt="Zoom-out camera move transition"></div><div class="txt">
+<h3><b>T04</b> Zoom-out camera move transition</h3>
+<p>Clip A sits zoomed in (1.3x), then rushes out through the cut in about 2 motion-blurred frames and clip B lands wide and settles in 3 frames. Optional word in the gradient glow style rides the move.</p>
+<p><i>Best for:</i> cut from a close shot to a wide shot, question or reaction moments. <i>Mood:</i> energetic, snappy, creator. <i>Length:</i> 14 frames.</p>
+<div class="tags"><span>zoom out</span><span>camera move</span><span>punch out</span><span>zoom transition</span><span>transform transition</span><span>whoosh zoom</span><span>speed ramp zoom</span><span>motion blur zoom</span></div>
+<code>python3 effects/transitions.py zoomout A.mov --cut &lt;s&gt; B.mov --b-in &lt;s&gt; -o out.mp4 [--text &quot;What&quot;]</code></div></article><article id="T05"><div class="vids"><img src="gifs/T05-focus-pull-camera-blur-transition.gif" loading="lazy" alt="Focus pull camera blur transition"></div><div class="txt">
+<h3><b>T05</b> Focus pull camera blur transition</h3>
+<p>A subtle push in, a light softening just before the cut and for 2 frames after it, like a lens briefly losing focus. Quiet, not a heavy blur.</p>
+<p><i>Best for:</i> calm or cinematic cuts, mood changes, b-roll sequences. <i>Mood:</i> cinematic, dreamy, calm. <i>Length:</i> 15 frames.</p>
+<div class="tags"><span>focus pull</span><span>camera blur</span><span>out of focus</span><span>defocus</span><span>lens blur</span><span>rack focus</span><span>soft blur transition</span><span>gaussian blur</span></div>
+<code>python3 effects/transitions.py focus A.mov --cut &lt;s&gt; B.mov --b-in &lt;s&gt; -o out.mp4</code></div></article><article id="T06"><div class="vids"><img src="gifs/T06-white-flash-subject-transition.gif" loading="lazy" alt="White flash subject transition"></div><div class="txt">
+<h3><b>T06</b> White flash subject transition</h3>
+<p>the subject&#x27;s frozen outline from the next shot appears over clip A as a warm white silhouette and fades into full colour over 5 frames, then the cut. Softer cousin of T02.</p>
+<p><i>Best for:</i> the subject appearing in a place, scene to scene with the same framing. <i>Mood:</i> clean, dreamy, premium. <i>Length:</i> 5 frames.</p>
+<div class="tags"><span>white flash</span><span>flash in</span><span>subject flash</span><span>silhouette flash</span><span>appear</span><span>magic mask flash</span><span>glow in</span></div>
+<code>python3 effects/transitions.py whiteflash A.mov --cut &lt;s&gt; B.mov --b-in &lt;s&gt; -o out.mp4</code></div></article><article id="T07"><div class="vids"><img src="gifs/T07-punch-in-flash-transition.gif" loading="lazy" alt="Punch-in flash transition"></div><div class="txt">
+<h3><b>T07</b> Punch-in flash transition</h3>
+<p>The end of a shot washes to white from the left over 2 frames, one red-tinted frame hits, then the next shot cuts in tighter (about 1.15x) and holds.</p>
+<p><i>Best for:</i> jump cuts in a talking head, beat hits, moving from a statement to the punchline. <i>Mood:</i> energetic, punchy, creator. <i>Length:</i> 3 frames.</p>
+<div class="tags"><span>punch in</span><span>punch zoom</span><span>flash cut</span><span>jump zoom</span><span>red flash cut</span><span>white flash cut</span><span>pop cut</span><span>reframe cut</span></div>
+<code>python3 effects/transitions.py punch A.mov --cut &lt;s&gt; B.mov --b-in &lt;s&gt; -o out.mp4</code></div></article><article id="T08"><div class="vids"><img src="gifs/T08-crt-white-flash-reset.gif" loading="lazy" alt="CRT white flash reset"></div><div class="txt">
+<h3><b>T08</b> CRT white flash reset</h3>
+<p>A punched-in shot cuts to 4 frames of white with faint CRT scan lines, then comes back at normal framing: a clean way to undo a punch-in.</p>
+<p><i>Best for:</i> podcast and talking-head clips, after a punch-in, between two lines. <i>Mood:</i> punchy, clean, podcast. <i>Length:</i> 4 frames.</p>
+<div class="tags"><span>crt flash</span><span>white flash</span><span>flash reset</span><span>punch out</span><span>screen flash</span><span>zoom reset</span><span>podcast flash</span></div>
+<code>python3 effects/transitions.py crt A.mov --cut &lt;s&gt; B.mov --b-in &lt;s&gt; -o out.mp4</code></div></article></section><section id="title"><h2>Titles and text</h2><p class="blurb">Animated words over a clip.</p><article id="TX01"><div class="vids"><img src="gifs/TX01-fade-up-stacked-title.gif" loading="lazy" alt="Fade-up stacked title"></div><div class="txt">
+<h3><b>TX01</b> Fade-up stacked title</h3>
+<p>White Helvetica words stacked tight and overlapping, each fading toward its bottom, rising in one by one fast then landing slow.</p>
+<p><i>Best for:</i> calm hook title, Apple style statement, chapter title. <i>Mood:</i> minimal, premium, calm, apple. <i>Length:</i> 20 frames.</p>
+<div class="tags"><span>fade up</span><span>fade text</span><span>apple text</span><span>minimal text</span><span>stacked words</span><span>helvetica</span><span>gradient text</span><span>rise up text</span></div>
+<code>python3 effects/text_fx.py fade &quot;The Fade Text Effect&quot; --bg clip.mov --at &lt;s&gt; --y 0.15 -o out.mp4 [--alpha text.mov]</code></div></article><article id="TX02"><div class="vids"><img src="gifs/TX02-premium-3d-serif-title.gif" loading="lazy" alt="Premium 3D serif title"></div><div class="txt">
+<h3><b>TX02</b> Premium 3D serif title</h3>
+<p>Embossed Apple Garamond italic: first word grey metal, second word orange red, lit from the top left. The demo uses Apple Garamond; without it the effect falls back to Baskerville.</p>
+<p><i>Best for:</i> money or luxury words, two-word titles, product names. <i>Mood:</i> premium, classy, bold. <i>Length:</i> 15 frames.</p>
+<div class="tags"><span>premium text</span><span>3d text</span><span>emboss</span><span>bevel</span><span>bump map</span><span>serif</span><span>garamond</span><span>italic</span><span>luxury text</span><span>chrome serif</span></div>
+<code>python3 effects/text_fx.py premium &quot;Premium|Text&quot; --bg clip.mov --at &lt;s&gt; --y 0.12 -o out.mp4 [--alpha text.mov]</code></div></article><article id="TX03"><div class="vids"><img src="gifs/TX03-glitch-flicker-title.gif" loading="lazy" alt="Glitch flicker title"></div><div class="txt">
+<h3><b>TX03</b> Glitch flicker title</h3>
+<p>Chrome italic words that flicker on and off while rising with motion blur, stacked and overlapping.</p>
+<p><i>Best for:</i> hype hook, tech or AI words, fast intros. <i>Mood:</i> hype, tech, energetic. <i>Length:</i> 35 frames.</p>
+<div class="tags"><span>glitch</span><span>flicker</span><span>strobe text</span><span>chrome text</span><span>y2k</span><span>tech text</span><span>flash text</span><span>motion blur text</span></div>
+<code>python3 effects/text_fx.py glitch &quot;Glitch Text Effect&quot; --bg clip.mov --at &lt;s&gt; --y 0.13 -o out.mp4 [--alpha text.mov]</code></div></article><article id="TX04"><div class="vids"><img src="gifs/TX04-bounce-captions-elastic-pop.gif" loading="lazy" alt="Bounce captions elastic pop"></div><div class="txt">
+<h3><b>TX04</b> Bounce captions elastic pop</h3>
+<p>One or two white heavy caps words per card (4 to 8 characters), each new card pops in at 80 % size, overshoots to 106 % and settles at 100 % by the third frame.</p>
+<p><i>Best for:</i> talking-head captions for the whole video, energetic delivery. <i>Mood:</i> energetic, clean, creator. <i>Length:</i> 3 frames.</p>
+<div class="tags"><span>bounce captions</span><span>bouncy text</span><span>elastic</span><span>pop captions</span><span>one word captions</span><span>subtitles</span><span>snap captions</span><span>caption bounce</span><span>word pop</span></div>
+<code>python3 effects/bounce_captions.py --bg clip.mov --at &lt;s&gt; --text &quot;your words&quot; -o out.mp4  (or --words words.json with real word times)</code></div></article><article id="TX05"><div class="vids"><img src="gifs/TX05-gradient-glow-rising-title.gif" loading="lazy" alt="Gradient glow rising title"></div><div class="txt">
+<h3><b>TX05</b> Gradient glow rising title</h3>
+<p>Helvetica bold words with an orange to purple gradient and a soft glow, rising slowly into place over the whole clip (fast start, slow landing).</p>
+<p><i>Best for:</i> short spoken questions or punchlines, the word that rides T04. <i>Mood:</i> bold, colourful, energetic. <i>Length:</i> any length.</p>
+<div class="tags"><span>gradient text</span><span>glow text</span><span>orange purple text</span><span>neon text</span><span>rising text</span><span>what are you doing</span><span>helvetica bold gradient</span><span>sunset text</span></div>
+<code>python3 effects/text_fx.py gradglow &quot;What are you doing&quot; --bg clip.mov --at &lt;s&gt; --y 0.6 -o out.mp4 [--alpha text.mov]</code></div></article><article id="TX06"><div class="vids"><img src="gifs/TX06-word-slide-up-title.gif" loading="lazy" alt="Word slide-up title"></div><div class="txt">
+<h3><b>TX06</b> Word slide-up title</h3>
+<p>SF Pro words slide up into place one after another (each word starts about halfway through the one before), fading in over 7 frames.</p>
+<p><i>Best for:</i> clean captions or titles, Apple style. <i>Mood:</i> clean, minimal, apple. <i>Length:</i> 25 frames.</p>
+<div class="tags"><span>word slide</span><span>slide up text</span><span>apple text</span><span>sf pro</span><span>follower</span><span>clean text animation</span><span>staggered words</span><span>rise in words</span></div>
+<code>python3 effects/hook_fx.py wordslide clip.mov --at &lt;s&gt; --dur 3 --text &quot;Your words&quot; --y 0.5 -o out.mp4</code></div></article><article id="TX07"><div class="vids"><img src="gifs/TX07-bevel-shine-sweep-title.gif" loading="lazy" alt="Bevel shine sweep title"></div><div class="txt">
+<h3><b>TX07</b> Bevel shine sweep title</h3>
+<p>Bevelled grey metal italic letters with a highlight that runs across them about every half second, again and again.</p>
+<p><i>Best for:</i> premium product or brand names, reveal words. <i>Mood:</i> premium, metallic, bold. <i>Length:</i> 15 frames.</p>
+<div class="tags"><span>shine</span><span>sweep</span><span>light sweep</span><span>bevel</span><span>metal text</span><span>chrome shine</span><span>glint</span><span>krokodove bevel</span></div>
+<code>python3 effects/shine_fx.py sweep &quot;SHINE SWEEP&quot; --bg clip.mov --at &lt;s&gt; --dur 1.5 --y 0.12 -o out.mp4</code></div></article><article id="TX08"><div class="vids"><img src="gifs/TX08-halftone-dots-resolve-title.gif" loading="lazy" alt="Halftone dots resolve title"></div><div class="txt">
+<h3><b>TX08</b> Halftone dots resolve title</h3>
+<p>The words start as one row of big white dots that shrink and multiply until the clean text appears.</p>
+<p><i>Best for:</i> tech or reveal titles, intros. <i>Mood:</i> tech, playful, minimal. <i>Length:</i> 20 frames.</p>
+<div class="tags"><span>halftone</span><span>dots</span><span>rasterize</span><span>dot text</span><span>pixel to text</span><span>resolve</span><span>dot matrix</span><span>krokodove rasterize</span></div>
+<code>python3 effects/shine_fx.py halftone &quot;Your words&quot; --bg clip.mov --at &lt;s&gt; --dur 1.8 --y 0.12 -o out.mp4</code></div></article><article id="TX09"><div class="vids"><img src="gifs/TX09-3d-camera-fly-through-text.gif" loading="lazy" alt="3D camera fly-through text"></div><div class="txt">
+<h3><b>TX09</b> 3D camera fly-through text</h3>
+<p>Lines of text float at different depths, alternating left and right; the camera creeps forward so each line grows, slides off the edge and goes soft as it passes, while the video behind grows slowly.</p>
+<p><i>Best for:</i> hooks with 2 or 3 short phrases, statement openers. <i>Mood:</i> cinematic, premium, social. <i>Length:</i> 75 frames.</p>
+<div class="tags"><span>3d text</span><span>camera text</span><span>fly through</span><span>depth text</span><span>3d camera</span><span>parallax text</span><span>text in space</span><span>trending 3d text</span></div>
+<code>python3 effects/camera3d_text.py clip.mov --at &lt;s&gt; --dur 3.2 --lines &quot;built in code|no plugins|just Python&quot; -o out.mp4</code></div></article><article id="TX10"><div class="vids"><img src="gifs/TX10-apple-bounce-rise-title.gif" loading="lazy" alt="Apple bounce rise"></div><div class="txt">
+<h3><b>TX10</b> Apple bounce rise</h3>
+<p>A title (gradient with glow) or any image card, tilted 2.6 degrees, rises from low in the frame, overshoots a little, dips and settles, like Apple&#x27;s product reveals.</p>
+<p><i>Best for:</i> product or feature reveals, screenshots and cards, &#x27;the all new&#x27; style titles. <i>Mood:</i> apple, premium, clean, playful. <i>Length:</i> 40 frames.</p>
+<div class="tags"><span>apple</span><span>apple style</span><span>bounce</span><span>overshoot</span><span>card rise</span><span>tilted rise</span><span>product reveal</span><span>the all new</span></div>
+<code>python3 effects/apple_bounce.py --bg clip.mov --at &lt;s&gt; --dur 2.2 --text &quot;Introducing&quot; -o out.mp4  (or --image card.png)</code></div></article><article id="TX11"><div class="vids"><img src="gifs/TX11-blur-up-slide-words.gif" loading="lazy" alt="Blur up slide words"></div><div class="txt">
+<h3><b>TX11</b> Blur up slide words</h3>
+<p>Each word rises a little from below, out of focus, and sharpens as it fades in; the next word starts about halfway through the one before; a faint softness stays.</p>
+<p><i>Best for:</i> cinematic captions and titles over b-roll. <i>Mood:</i> cinematic, soft, premium. <i>Length:</i> 22 frames.</p>
+<div class="tags"><span>blur up slide</span><span>blur slide</span><span>cinematic text</span><span>words blur in</span><span>soft rise</span><span>focus in text</span><span>blur reveal</span></div>
+<code>python3 effects/hook_fx.py blurslide clip.mov --at &lt;s&gt; --dur 2.4 --text &quot;Your words&quot; --y 0.72 --size 90 -o out.mp4</code></div></article><article id="TX12"><div class="vids"><img src="gifs/TX12-continuous-slide-through.gif" loading="lazy" alt="Continuous slide through"><img src="gifs/TX12-continuous-slide-through-blur-variant.gif" loading="lazy" alt="Continuous slide through"></div><div class="txt">
+<h3><b>TX12</b> Continuous slide through</h3>
+<p>A word whips in from the left, slows and drifts through the middle without stopping, then eases off to the right.</p>
+<p><i>Best for:</i> passing statements, lists of words, rhythm text. <i>Mood:</i> smooth, cinematic, minimal. <i>Length:</i> 50 frames.</p>
+<div class="tags"><span>continuous slide</span><span>slide through</span><span>pass through text</span><span>drift text</span><span>ticker</span><span>whip in</span><span>right slide</span><span>blur through</span><span>continuous zoom</span><span>in the sight of god</span></div>
+<code>python3 effects/hook_fx.py continuous clip.mov --at &lt;s&gt; --dur 2.4 --text &quot;Continuous&quot; --y 0.72 -o out.mp4  |  blur variant: python3 effects/hook_fx.py continuousblur clip.mov --at &lt;s&gt; --dur 3 --text &quot;Slide right through&quot; -o out.mp4</code></div></article><article id="TX13"><div class="vids"><img src="gifs/TX13-selection-highlight-sweep.gif" loading="lazy" alt="Selection highlight sweep"></div><div class="txt">
+<h3><b>TX13</b> Selection highlight sweep</h3>
+<p>A dark-blue rounded bar sweeps across the line like a text cursor, leaving a pale-blue highlight box behind it; the words inside turn pale blue, with a soft glow.</p>
+<p><i>Best for:</i> emphasising a caption or key phrase, revealing a name or logo. <i>Mood:</i> clean, ui, premium. <i>Length:</i> 10 frames.</p>
+<div class="tags"><span>highlight</span><span>selection</span><span>marker sweep</span><span>text highlight</span><span>cursor sweep</span><span>blue highlight</span><span>reveal bar</span><span>emphasis box</span></div>
+<code>python3 effects/caption_fx.py highlight &quot;Cinematic Captions&quot; --bg clip.mov --at &lt;s&gt; --dur 1.4 --y 0.72 -o out.mp4</code></div></article><article id="TX14"><div class="vids"><img src="gifs/TX14-word-drop-stop-motion.gif" loading="lazy" alt="Word drop stop-motion"></div><div class="txt">
+<h3><b>TX14</b> Word drop stop-motion</h3>
+<p>Words fall into place one after another from above, fading in, and the motion steps every second frame like stop motion.</p>
+<p><i>Best for:</i> captions with a handmade feel, client reels. <i>Mood:</i> playful, handmade, creator. <i>Length:</i> 27 frames.</p>
+<div class="tags"><span>word drop</span><span>drop down</span><span>stop motion</span><span>choppy text</span><span>falling words</span><span>hand animated</span><span>word down</span></div>
+<code>python3 effects/caption_fx.py dropstop &quot;Your words&quot; --bg clip.mov --at &lt;s&gt; --dur 2.2 --y 0.72 -o out.mp4</code></div></article><article id="TX15"><div class="vids"><img src="gifs/TX15-shaky-erode-rise-title.gif" loading="lazy" alt="Shaky erode rise title"></div><div class="txt">
+<h3><b>TX15</b> Shaky erode rise title</h3>
+<p>Handwritten letters start as thin strokes and thicken in a few choppy steps (held 4 frames each) while each letter jitters slightly up and down, and the line rises into place.</p>
+<p><i>Best for:</i> playful, handmade or vlog-style titles. <i>Mood:</i> playful, handmade, vlog. <i>Length:</i> 25 frames.</p>
+<div class="tags"><span>shaky text</span><span>erode</span><span>handwritten</span><span>stop motion text</span><span>jitter</span><span>wiggle text</span><span>marker text</span><span>hand drawn title</span></div>
+<code>python3 effects/caption_fx.py shakyerode &quot;Custom Title&quot; --bg clip.mov --at &lt;s&gt; --dur 2 --y 0.72 -o out.mp4</code></div></article></section><section id="fx"><h2>Looks and overlays</h2><p class="blurb">Effects on one clip.</p><article id="FX01"><div class="vids"><img src="gifs/FX01-box-flash-invert-boxes.gif" loading="lazy" alt="Box flash invert boxes"></div><div class="txt">
+<h3><b>FX01</b> Box flash invert boxes</h3>
+<p>Rectangles of the picture flip to a photo negative for 5 or 6 frames at a time: the head, a sky corner, a wide band, a 1-frame thin bar, sometimes two boxes at once or the whole frame, with 8-frame gaps.</p>
+<p><i>Best for:</i> fast b-roll montages, hook energy, highlighting a face or object for a beat. <i>Mood:</i> hype, flashy, music video, energetic. <i>Length:</i> 70 frames.</p>
+<div class="tags"><span>box flash</span><span>invert box</span><span>negative box</span><span>difference box</span><span>flash box</span><span>flashy edit</span><span>exclusion</span><span>highlight box</span><span>inverted crop</span><span>photo negative</span></div>
+<code>python3 effects/box_flash.py clip.mov --at &lt;s&gt; --dur 3 -o out.mp4 [--boxes boxes.json] [--mode difference|exclusion]</code></div></article><article id="FX02"><div class="vids"><img src="gifs/FX02-four-by-three-rounded-window.gif" loading="lazy" alt="Four by three rounded window"></div><div class="txt">
+<h3><b>FX02</b> Four by three rounded window</h3>
+<p>The clip plays inside a 4:3 window with small rounded corners (about 3 % of the frame width), centred on black or any colour.</p>
+<p><i>Best for:</i> b-roll or screen clips in a vertical Short, a framed documentary look. <i>Mood:</i> clean, documentary, minimal. <i>Length:</i> any length.</p>
+<div class="tags"><span>4:3</span><span>4x3</span><span>four by three</span><span>aspect ratio</span><span>rounded window</span><span>framed video</span><span>letterbox</span><span>rounded rectangle</span><span>card frame</span></div>
+<code>python3 effects/window_43.py clip.mov --at &lt;s&gt; --dur 3 -o out.mp4 [--focus 0.32] [--radius 0.06] [--bg 0,0,0]</code></div></article><article id="FX03"><div class="vids"><img src="gifs/FX03-face-lock-follow-stabilize.gif" loading="lazy" alt="Face lock follow stabilize"></div><div class="txt">
+<h3><b>FX03</b> Face lock follow stabilize</h3>
+<p>The head stays fixed in the frame while the background moves around it, zoomed in so no black edges show.</p>
+<p><i>Best for:</i> walking or handheld shots of the subject, b-roll montages, pairs well with the box flash. <i>Mood:</i> dynamic, music video, vlog. <i>Length:</i> any length.</p>
+<div class="tags"><span>face lock</span><span>follow</span><span>stabilize</span><span>planar tracker</span><span>head lock</span><span>tracking</span><span>locked face</span><span>following me</span><span>camera follow</span></div>
+<code>python3 effects/face_lock.py clip.mov --at &lt;s&gt; --dur 3 -o out.mp4 [--zoom 1.18]</code></div></article><article id="FX04"><div class="vids"><img src="gifs/FX04-super-slow-motion-optical-flow.gif" loading="lazy" alt="Super slow motion optical flow"></div><div class="txt">
+<h3><b>FX04</b> Super slow motion optical flow</h3>
+<p>Footage slowed about 12x with new in-between frames, so it stays smooth.</p>
+<p><i>Best for:</i> b-roll under the voice so viewers can take in the shot; dramatic moments. <i>Mood:</i> cinematic, calm, dramatic. <i>Length:</i> any length.</p>
+<div class="tags"><span>slow motion</span><span>slowmo</span><span>slo mo</span><span>optical flow</span><span>retime</span><span>speed warp</span><span>frame interpolation</span><span>smooth slow</span></div>
+<code>python3 effects/slowmo.py clip.mov --at &lt;s&gt; --src-dur 0.33 --factor 12 -o out.mp4</code></div></article><article id="FX05"><div class="vids"><img src="gifs/FX05-rec-recording-overlay.gif" loading="lazy" alt="REC recording overlay"></div><div class="txt">
+<h3><b>FX05</b> REC recording overlay</h3>
+<p>A small white REC with a red dot, held over the whole video; it flickers on at the start with the same frames as the glitch title.</p>
+<p><i>Best for:</i> vlog or behind-the-scenes feel, montages; pairs well with the box flash. <i>Mood:</i> vlog, raw, music video. <i>Length:</i> any length.</p>
+<div class="tags"><span>rec</span><span>record</span><span>recording</span><span>camcorder</span><span>red dot</span><span>rec overlay</span><span>vlog overlay</span><span>flicker text</span><span>viewfinder</span></div>
+<code>python3 effects/rec_overlay.py clip.mov --at &lt;s&gt; --dur 6 -o out.mp4 [--x 0.5 --y 0.5] [--size 70] [--no-flicker]</code></div></article><article id="FX06"><div class="vids"><img src="gifs/FX06-hook-zoom-out-intro.gif" loading="lazy" alt="Hook zoom-out intro"><img src="gifs/FX06-hook-zoom-out-intro-lens-variant.gif" loading="lazy" alt="Hook zoom-out intro"></div><div class="txt">
+<h3><b>FX06</b> Hook zoom-out intro</h3>
+<p>The first shot starts zoomed in 2.5x and snaps most of the way back in about 4 frames with motion blur, then glides the last bit over 2 seconds.</p>
+<p><i>Best for:</i> the first 2 seconds of every video. <i>Mood:</i> energetic, clean, creator. <i>Length:</i> 60 frames.</p>
+<div class="tags"><span>hook zoom</span><span>zoom out intro</span><span>punch out</span><span>intro zoom</span><span>opening zoom</span><span>scale down</span><span>hook animation</span><span>lens distortion</span><span>bulge</span><span>fisheye zoom</span></div>
+<code>python3 effects/hook_fx.py hookzoom clip.mov --at &lt;s&gt; --dur 3 -o out.mp4  |  lens variant: python3 effects/hook_fx.py hookzoomlens clip.mov --at &lt;s&gt; --dur 3 -o out.mp4</code></div></article><article id="FX07"><div class="vids"><img src="gifs/FX07-text-behind-subject.gif" loading="lazy" alt="Text behind subject"></div><div class="txt">
+<h3><b>FX07</b> Text behind subject</h3>
+<p>Big bold italic words sit behind the subject (the subject passes in front of them), with an optional small title on top in front of the subject, last word in lime.</p>
+<p><i>Best for:</i> hook titles, walk-in shots, thumbnails come alive (needs space around the person: in a tight close-up the head hides the title). <i>Mood:</i> premium, creator, depth. <i>Length:</i> any length.</p>
+<div class="tags"><span>text behind</span><span>behind the person</span><span>rotoscope text</span><span>magic mask text</span><span>depth text</span><span>title behind head</span><span>occlusion</span></div>
+<code>python3 effects/hook_fx.py behind clip.mov --at &lt;s&gt; --dur 3 --text &quot;Big Title|Behind You&quot; --front &quot;Watch This:&quot; --y 0.42 --size 150 -o out.mp4</code></div></article><article id="FX08"><div class="vids"><img src="gifs/FX08-stutter-push-in.gif" loading="lazy" alt="Stutter push-in"></div><div class="txt">
+<h3><b>FX08</b> Stutter push-in</h3>
+<p>One 2-frame slice repeats again and again (a stuck, glitchy moment) while the picture rushes in and then creeps closer.</p>
+<p><i>Best for:</i> a word where the audio glitches, beat hits, emphasis. <i>Mood:</i> hype, glitchy, music video. <i>Length:</i> 2 frames.</p>
+<div class="tags"><span>stutter</span><span>glitch repeat</span><span>frame repeat</span><span>stuck frame</span><span>loop frames</span><span>shake repeat</span><span>stutter zoom</span></div>
+<code>python3 effects/strobe_fx.py stutter clip.mov --at &lt;s&gt; --dur 1.6 -o out.mp4 [--zoom 1.28]</code></div></article><article id="FX09"><div class="vids"><img src="gifs/FX09-red-flash-strobe.gif" loading="lazy" alt="Red flash strobe"></div><div class="txt">
+<h3><b>FX09</b> Red flash strobe</h3>
+<p>Two shots cut in 2-frame slices, alternating; some slices glow hot, others turn red. Trippy strobe on a beat.</p>
+<p><i>Best for:</i> music drops, intense moments, montage peaks. <i>Mood:</i> intense, trippy, music video. <i>Length:</i> 2 frames.</p>
+<div class="tags"><span>red flash</span><span>strobe</span><span>flash cuts</span><span>darken red</span><span>linear dodge glow</span><span>trippy</span><span>rapid cuts</span><span>red tint flicker</span></div>
+<code>python3 effects/strobe_fx.py redflash A.mov --at &lt;s&gt; B.mov --b-at &lt;s&gt; --dur 2 -o out.mp4</code></div></article><article id="FX10"><div class="vids"><img src="gifs/FX10-light-rays-wipe.gif" loading="lazy" alt="Light rays wipe"></div><div class="txt">
+<h3><b>FX10</b> Light rays wipe</h3>
+<p>A strong white burst of rays washes over the shot from the bright areas and slowly pulls back over about 2 seconds.</p>
+<p><i>Best for:</i> dramatic openings, reveals, soft transitions. <i>Mood:</i> dramatic, dreamy, cinematic. <i>Length:</i> 50 frames.</p>
+<div class="tags"><span>light rays</span><span>god rays</span><span>microwaves</span><span>beams</span><span>rays burst</span><span>glow rays</span><span>sun rays</span><span>krokodove microwaves</span></div>
+<code>python3 effects/shine_fx.py rays &quot;&quot; --bg clip.mov --at &lt;s&gt; --dur 2.4 -o out.mp4</code></div></article><article id="FX11"><div class="vids"><img src="gifs/FX11-liquid-glass-pill.gif" loading="lazy" alt="Liquid glass pill"></div><div class="txt">
+<h3><b>FX11</b> Liquid glass pill</h3>
+<p>A small glass ball rises under the words, then stretches into a rounded glass pill around them; the picture bends at its edges and a thin bright rim catches the light.</p>
+<p><i>Best for:</i> UI-style titles, key words, buttons, Apple style intros. <i>Mood:</i> clean, apple, premium, ui. <i>Length:</i> 24 frames.</p>
+<div class="tags"><span>liquid glass</span><span>glass pill</span><span>ui animation</span><span>apple glass</span><span>glass button</span><span>refraction</span><span>glass bubble</span><span>ios glass</span></div>
+<code>python3 effects/liquid_glass.py clip.mov --at &lt;s&gt; --dur 2 --text &quot;In Seconds&quot; --y 0.72 -o out.mp4</code></div></article><article id="FX12"><div class="vids"><img src="gifs/FX12-3d-parallax-collage-pan.gif" loading="lazy" alt="3D parallax collage pan"></div><div class="txt">
+<h3><b>FX12</b> 3D parallax collage pan</h3>
+<p>Cut-out layers (background, a person, objects, text) sit at different depths; the camera trucks sideways and pushes in a little, so near layers slide past fast and far ones slowly, and text slides in from the side.</p>
+<p><i>Best for:</i> documentary or story openers, turning stills and cut-outs into a 3D scene. <i>Mood:</i> documentary, cinematic, storytelling. <i>Length:</i> any length.</p>
+<div class="tags"><span>parallax</span><span>3d collage</span><span>documentary 3d</span><span>2.5d</span><span>camera truck</span><span>layered pan</span><span>image planes</span><span>depth pan</span></div>
+<code>python3 effects/parallax_collage.py --layers layers.json --dur 3 [--truck 1.3] -o out.mp4</code></div></article><article id="FX13"><div class="vids"><img src="gifs/FX13-aesthetic-moving-gradient-background.gif" loading="lazy" alt="Aesthetic moving gradient background"></div><div class="txt">
+<h3><b>FX13</b> Aesthetic moving gradient background</h3>
+<p>A slow-drifting background: deep black on one side melting into grainy royal blue, with film grain. Any 3 colours.</p>
+<p><i>Best for:</i> the plate behind titles, cards and screenshots in faceless or aesthetic reels. <i>Mood:</i> aesthetic, moody, clean. <i>Length:</i> any length.</p>
+<div class="tags"><span>background</span><span>gradient background</span><span>noise background</span><span>aesthetic</span><span>grainy gradient</span><span>fast noise</span><span>moving backdrop</span><span>plate</span></div>
+<code>python3 effects/noise_bg.py --dur 4 -o bg.mp4 [--colors &quot;0,0,0;18,45,150;70,110,215&quot;] [--rate 0.06]</code></div></article><article id="FX14"><div class="vids"><img src="gifs/FX14-screen-replacement-corner-pin.gif" loading="lazy" alt="Screen replacement corner pin"></div><div class="txt">
+<h3><b>FX14</b> Screen replacement corner pin</h3>
+<p>A screenshot or clip is pinned into a laptop, phone or monitor screen in a shot, following its corners, toned a little darker and softer so it sits in the scene.</p>
+<p><i>Best for:</i> showing a website, app or screenshot on a real device in b-roll or a 3D scene. <i>Mood:</i> clean, tech, realistic. <i>Length:</i> any length.</p>
+<div class="tags"><span>screen replacement</span><span>corner pin</span><span>planar tracker</span><span>put a screenshot on a laptop</span><span>phone screen</span><span>monitor insert</span><span>screen insert</span><span>mockup</span></div>
+<code>python3 effects/corner_pin.py shot.mov --at &lt;s&gt; --dur 2 --content screenshot.png --corners pins.json -o out.mp4</code></div></article><article id="FX15"><div class="vids"><img src="gifs/FX15-film-look-grade.gif" loading="lazy" alt="Film look grade"></div><div class="txt">
+<h3><b>FX15</b> Film look grade</h3>
+<p>A 35 mm style grade: gently lifted blacks, soft highlight roll-off, slightly muted olive greens, warm skin, a faint warm glow around bright edges (halation), a half-strength vignette and fine grain.</p>
+<p><i>Best for:</i> making talking heads and b-roll feel cinematic and consistent. <i>Mood:</i> cinematic, warm, film. <i>Length:</i> any length.</p>
+<div class="tags"><span>film look</span><span>cinematic grade</span><span>35mm</span><span>film look creator</span><span>halation</span><span>grain</span><span>color grade</span><span>lut look</span><span>vintage</span></div>
+<code>python3 effects/film_look.py clip.mov --at &lt;s&gt; --dur 3 -o out.mp4 [--strength 1] [--grain 0.035] [--halation 0.18] [--vignette 0.5] [--compare]</code></div></article><article id="FX16"><div class="vids"><img src="gifs/FX16-chromatic-aberration.gif" loading="lazy" alt="Chromatic aberration"></div><div class="txt">
+<h3><b>FX16</b> Chromatic aberration</h3>
+<p>Thin red and cyan fringes along edges that grow toward the corners, like a cheap lens; the centre stays clean.</p>
+<p><i>Best for:</i> a finishing touch on a grade, gritty or music-video looks. <i>Mood:</i> gritty, cinematic, music video. <i>Length:</i> any length.</p>
+<div class="tags"><span>chromatic aberration</span><span>rgb split</span><span>color fringe</span><span>lens fringe</span><span>split channels</span><span>prism edge</span><span>ca</span></div>
+<code>python3 effects/chromatic.py clip.mov --at &lt;s&gt; --dur 3 -o out.mp4 [--amount 0.006]</code></div></article><article id="FX17"><div class="vids"><img src="gifs/FX17-vignette-blink-flicker.gif" loading="lazy" alt="Vignette blink flicker"></div><div class="txt">
+<h3><b>FX17</b> Vignette blink flicker</h3>
+<p>Dark soft edges flash on for a frame or two at a time, a few times, then the picture is clean again: a subtle blink.</p>
+<p><i>Best for:</i> hook openers and title moments, a premium feel on b-roll. <i>Mood:</i> cinematic, subtle, premium. <i>Length:</i> 14 frames.</p>
+<div class="tags"><span>vignette blink</span><span>blink</span><span>flicker vignette</span><span>dark edges flash</span><span>premium flicker</span><span>camera blink overlay</span></div>
+<code>python3 effects/strobe_fx.py vigblink clip.mov --at &lt;s&gt; --dur 1 -o out.mp4</code></div></article></section>
+<script>function f(){const q=document.getElementById('q').value.toLowerCase().split(' ').filter(Boolean);
+document.querySelectorAll('article').forEach(a=>{const t=a.innerText.toLowerCase();a.style.display=q.every(w=>t.includes(w))?'flex':'none'})}</script>
+</body></html>

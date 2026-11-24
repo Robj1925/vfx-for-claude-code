@@ -1,0 +1,1150 @@
+{
+ "_about": "One entry per effect. find.py searches id, name, kind, aliases, look, use_for and mood. Paths are relative to the repo root.",
+ "effects": [
+  {
+   "id": "T01",
+   "name": "Light leak glow transition",
+   "kind": "transition",
+   "aliases": [
+    "light leak",
+    "glow",
+    "flare",
+    "overlay transition",
+    "film burn",
+    "flash",
+    "prism",
+    "lens flare",
+    "warm leak",
+    "red leak"
+   ],
+   "looks": [
+    "warm (red and orange sweep from the left, white-hot band at the bottom)",
+    "prism (cyan, green and magenta streaks with a white core)"
+   ],
+   "look": "A soft coloured glow swells over the end of clip A, peaks on the cut, washes over clip B and is gone 5 frames later.",
+   "use_for": "energy cut between b-roll shots, hook into the body, beat drops",
+   "mood": [
+    "energetic",
+    "warm",
+    "music video",
+    "travel"
+   ],
+   "frames": 12,
+   "command": "python3 effects/transitions.py leak A.mov --cut <s in A> B.mov --b-in <s in B> --look warm|prism -o out.mp4",
+   "demo": [
+    "docs/gifs/T01-light-leak-glow-transition-warm.gif",
+    "docs/gifs/T01-light-leak-glow-transition-prism.gif"
+   ]
+  },
+  {
+   "id": "T02",
+   "name": "Roto silhouette step-in transition",
+   "kind": "transition",
+   "aliases": [
+    "roto",
+    "rotoscope",
+    "silhouette",
+    "cutout",
+    "step in",
+    "walk in",
+    "person appears",
+    "magic mask transition",
+    "ghost"
+   ],
+   "look": "The subject's outline from the next shot appears over clip A as a flat cream silhouette for 3 frames, then 1 frame in true colour, then the cut. The subject seems to step into the shot.",
+   "use_for": "b-roll or a graphic into the talking head; works best when B is the subject on camera",
+   "mood": [
+    "clean",
+    "premium",
+    "playful"
+   ],
+   "frames": 4,
+   "command": "python3 effects/transitions.py roto A.mov --cut <s in A> B.mov --b-in <s in B> -o out.mp4",
+   "demo": [
+    "docs/gifs/T02-roto-silhouette-step-in-transition.gif"
+   ],
+   "looks": []
+  },
+  {
+   "id": "T03",
+   "name": "Blur blink camera transition",
+   "kind": "transition",
+   "aliases": [
+    "blur",
+    "radial blur",
+    "zoom blur",
+    "motion blur",
+    "blink",
+    "camera blink",
+    "vignette",
+    "whip",
+    "cinematic transition"
+   ],
+   "look": "Zoom blur and a dark vignette build over 3 frames, peak on the cut and fade over 3 frames: a camera blink.",
+   "use_for": "cinematic cut between two moving shots, scene change, time jump",
+   "mood": [
+    "cinematic",
+    "smooth",
+    "subtle"
+   ],
+   "frames": 7,
+   "command": "python3 effects/transitions.py blink A.mov --cut <s in A> B.mov --b-in <s in B> -o out.mp4",
+   "demo": [
+    "docs/gifs/T03-blur-blink-camera-transition.gif"
+   ],
+   "looks": []
+  },
+  {
+   "id": "T04",
+   "name": "Zoom-out camera move transition",
+   "kind": "transition",
+   "aliases": [
+    "zoom out",
+    "camera move",
+    "punch out",
+    "zoom transition",
+    "transform transition",
+    "whoosh zoom",
+    "speed ramp zoom",
+    "motion blur zoom"
+   ],
+   "look": "Clip A sits zoomed in (1.3x), then rushes out through the cut in about 2 motion-blurred frames and clip B lands wide and settles in 3 frames. Optional word in the gradient glow style rides the move.",
+   "use_for": "cut from a close shot to a wide shot, question or reaction moments",
+   "mood": [
+    "energetic",
+    "snappy",
+    "creator"
+   ],
+   "frames": 14,
+   "command": "python3 effects/transitions.py zoomout A.mov --cut <s> B.mov --b-in <s> -o out.mp4 [--text \"What\"]",
+   "demo": [
+    "docs/gifs/T04-zoom-out-camera-move-transition.gif"
+   ],
+   "looks": []
+  },
+  {
+   "id": "T05",
+   "name": "Focus pull camera blur transition",
+   "kind": "transition",
+   "aliases": [
+    "focus pull",
+    "camera blur",
+    "out of focus",
+    "defocus",
+    "lens blur",
+    "rack focus",
+    "soft blur transition",
+    "gaussian blur"
+   ],
+   "look": "A subtle push in, a light softening just before the cut and for 2 frames after it, like a lens briefly losing focus. Quiet, not a heavy blur.",
+   "use_for": "calm or cinematic cuts, mood changes, b-roll sequences",
+   "mood": [
+    "cinematic",
+    "dreamy",
+    "calm"
+   ],
+   "frames": 15,
+   "command": "python3 effects/transitions.py focus A.mov --cut <s> B.mov --b-in <s> -o out.mp4",
+   "demo": [
+    "docs/gifs/T05-focus-pull-camera-blur-transition.gif"
+   ],
+   "looks": []
+  },
+  {
+   "id": "T06",
+   "name": "White flash subject transition",
+   "kind": "transition",
+   "aliases": [
+    "white flash",
+    "flash in",
+    "subject flash",
+    "silhouette flash",
+    "appear",
+    "magic mask flash",
+    "glow in"
+   ],
+   "look": "the subject's frozen outline from the next shot appears over clip A as a warm white silhouette and fades into full colour over 5 frames, then the cut. Softer cousin of T02.",
+   "use_for": "the subject appearing in a place, scene to scene with the same framing",
+   "mood": [
+    "clean",
+    "dreamy",
+    "premium"
+   ],
+   "frames": 5,
+   "command": "python3 effects/transitions.py whiteflash A.mov --cut <s> B.mov --b-in <s> -o out.mp4",
+   "demo": [
+    "docs/gifs/T06-white-flash-subject-transition.gif"
+   ],
+   "looks": []
+  },
+  {
+   "id": "T07",
+   "name": "Punch-in flash transition",
+   "kind": "transition",
+   "aliases": [
+    "punch in",
+    "punch zoom",
+    "flash cut",
+    "jump zoom",
+    "red flash cut",
+    "white flash cut",
+    "pop cut",
+    "reframe cut"
+   ],
+   "look": "The end of a shot washes to white from the left over 2 frames, one red-tinted frame hits, then the next shot cuts in tighter (about 1.15x) and holds.",
+   "use_for": "jump cuts in a talking head, beat hits, moving from a statement to the punchline",
+   "mood": [
+    "energetic",
+    "punchy",
+    "creator"
+   ],
+   "frames": 3,
+   "command": "python3 effects/transitions.py punch A.mov --cut <s> B.mov --b-in <s> -o out.mp4",
+   "demo": [
+    "docs/gifs/T07-punch-in-flash-transition.gif"
+   ],
+   "looks": []
+  },
+  {
+   "id": "T08",
+   "name": "CRT white flash reset",
+   "kind": "transition",
+   "aliases": [
+    "crt flash",
+    "white flash",
+    "flash reset",
+    "punch out",
+    "screen flash",
+    "zoom reset",
+    "podcast flash"
+   ],
+   "look": "A punched-in shot cuts to 4 frames of white with faint CRT scan lines, then comes back at normal framing: a clean way to undo a punch-in.",
+   "use_for": "podcast and talking-head clips, after a punch-in, between two lines",
+   "mood": [
+    "punchy",
+    "clean",
+    "podcast"
+   ],
+   "frames": 4,
+   "command": "python3 effects/transitions.py crt A.mov --cut <s> B.mov --b-in <s> -o out.mp4",
+   "demo": [
+    "docs/gifs/T08-crt-white-flash-reset.gif"
+   ],
+   "looks": []
+  },
+  {
+   "id": "TX01",
+   "name": "Fade-up stacked title",
+   "kind": "title",
+   "aliases": [
+    "fade up",
+    "fade text",
+    "apple text",
+    "minimal text",
+    "stacked words",
+    "helvetica",
+    "gradient text",
+    "rise up text"
+   ],
+   "look": "White Helvetica words stacked tight and overlapping, each fading toward its bottom, rising in one by one fast then landing slow.",
+   "use_for": "calm hook title, Apple style statement, chapter title",
+   "mood": [
+    "minimal",
+    "premium",
+    "calm",
+    "apple"
+   ],
+   "frames": 20,
+   "command": "python3 effects/text_fx.py fade \"The Fade Text Effect\" --bg clip.mov --at <s> --y 0.15 -o out.mp4 [--alpha text.mov]",
+   "demo": [
+    "docs/gifs/TX01-fade-up-stacked-title.gif"
+   ],
+   "looks": []
+  },
+  {
+   "id": "TX02",
+   "name": "Premium 3D serif title",
+   "kind": "title",
+   "aliases": [
+    "premium text",
+    "3d text",
+    "emboss",
+    "bevel",
+    "bump map",
+    "serif",
+    "garamond",
+    "italic",
+    "luxury text",
+    "chrome serif"
+   ],
+   "look": "Embossed Apple Garamond italic: first word grey metal, second word orange red, lit from the top left. The demo uses Apple Garamond; without it the effect falls back to Baskerville.",
+   "use_for": "money or luxury words, two-word titles, product names",
+   "mood": [
+    "premium",
+    "classy",
+    "bold"
+   ],
+   "frames": 15,
+   "command": "python3 effects/text_fx.py premium \"Premium|Text\" --bg clip.mov --at <s> --y 0.12 -o out.mp4 [--alpha text.mov]",
+   "demo": [
+    "docs/gifs/TX02-premium-3d-serif-title.gif"
+   ],
+   "looks": []
+  },
+  {
+   "id": "TX03",
+   "name": "Glitch flicker title",
+   "kind": "title",
+   "aliases": [
+    "glitch",
+    "flicker",
+    "strobe text",
+    "chrome text",
+    "y2k",
+    "tech text",
+    "flash text",
+    "motion blur text"
+   ],
+   "look": "Chrome italic words that flicker on and off while rising with motion blur, stacked and overlapping.",
+   "use_for": "hype hook, tech or AI words, fast intros",
+   "mood": [
+    "hype",
+    "tech",
+    "energetic"
+   ],
+   "frames": 35,
+   "command": "python3 effects/text_fx.py glitch \"Glitch Text Effect\" --bg clip.mov --at <s> --y 0.13 -o out.mp4 [--alpha text.mov]",
+   "demo": [
+    "docs/gifs/TX03-glitch-flicker-title.gif"
+   ],
+   "looks": []
+  },
+  {
+   "id": "TX04",
+   "name": "Bounce captions elastic pop",
+   "kind": "title",
+   "aliases": [
+    "bounce captions",
+    "bouncy text",
+    "elastic",
+    "pop captions",
+    "one word captions",
+    "subtitles",
+    "snap captions",
+    "caption bounce",
+    "word pop"
+   ],
+   "look": "One or two white heavy caps words per card (4 to 8 characters), each new card pops in at 80 % size, overshoots to 106 % and settles at 100 % by the third frame.",
+   "use_for": "talking-head captions for the whole video, energetic delivery",
+   "mood": [
+    "energetic",
+    "clean",
+    "creator"
+   ],
+   "frames": 3,
+   "command": "python3 effects/bounce_captions.py --bg clip.mov --at <s> --text \"your words\" -o out.mp4  (or --words words.json with real word times)",
+   "demo": [
+    "docs/gifs/TX04-bounce-captions-elastic-pop.gif"
+   ],
+   "looks": []
+  },
+  {
+   "id": "TX05",
+   "name": "Gradient glow rising title",
+   "kind": "title",
+   "aliases": [
+    "gradient text",
+    "glow text",
+    "orange purple text",
+    "neon text",
+    "rising text",
+    "what are you doing",
+    "helvetica bold gradient",
+    "sunset text"
+   ],
+   "look": "Helvetica bold words with an orange to purple gradient and a soft glow, rising slowly into place over the whole clip (fast start, slow landing).",
+   "use_for": "short spoken questions or punchlines, the word that rides T04",
+   "mood": [
+    "bold",
+    "colourful",
+    "energetic"
+   ],
+   "frames": 0,
+   "command": "python3 effects/text_fx.py gradglow \"What are you doing\" --bg clip.mov --at <s> --y 0.6 -o out.mp4 [--alpha text.mov]",
+   "demo": [
+    "docs/gifs/TX05-gradient-glow-rising-title.gif"
+   ],
+   "looks": []
+  },
+  {
+   "id": "TX06",
+   "name": "Word slide-up title",
+   "kind": "title",
+   "aliases": [
+    "word slide",
+    "slide up text",
+    "apple text",
+    "sf pro",
+    "follower",
+    "clean text animation",
+    "staggered words",
+    "rise in words"
+   ],
+   "look": "SF Pro words slide up into place one after another (each word starts about halfway through the one before), fading in over 7 frames.",
+   "use_for": "clean captions or titles, Apple style",
+   "mood": [
+    "clean",
+    "minimal",
+    "apple"
+   ],
+   "frames": 25,
+   "command": "python3 effects/hook_fx.py wordslide clip.mov --at <s> --dur 3 --text \"Your words\" --y 0.5 -o out.mp4",
+   "demo": [
+    "docs/gifs/TX06-word-slide-up-title.gif"
+   ],
+   "looks": []
+  },
+  {
+   "id": "TX07",
+   "name": "Bevel shine sweep title",
+   "kind": "title",
+   "aliases": [
+    "shine",
+    "sweep",
+    "light sweep",
+    "bevel",
+    "metal text",
+    "chrome shine",
+    "glint",
+    "krokodove bevel"
+   ],
+   "look": "Bevelled grey metal italic letters with a highlight that runs across them about every half second, again and again.",
+   "use_for": "premium product or brand names, reveal words",
+   "mood": [
+    "premium",
+    "metallic",
+    "bold"
+   ],
+   "frames": 15,
+   "command": "python3 effects/shine_fx.py sweep \"SHINE SWEEP\" --bg clip.mov --at <s> --dur 1.5 --y 0.12 -o out.mp4",
+   "demo": [
+    "docs/gifs/TX07-bevel-shine-sweep-title.gif"
+   ],
+   "looks": []
+  },
+  {
+   "id": "TX08",
+   "name": "Halftone dots resolve title",
+   "kind": "title",
+   "aliases": [
+    "halftone",
+    "dots",
+    "rasterize",
+    "dot text",
+    "pixel to text",
+    "resolve",
+    "dot matrix",
+    "krokodove rasterize"
+   ],
+   "look": "The words start as one row of big white dots that shrink and multiply until the clean text appears.",
+   "use_for": "tech or reveal titles, intros",
+   "mood": [
+    "tech",
+    "playful",
+    "minimal"
+   ],
+   "frames": 20,
+   "command": "python3 effects/shine_fx.py halftone \"Your words\" --bg clip.mov --at <s> --dur 1.8 --y 0.12 -o out.mp4",
+   "demo": [
+    "docs/gifs/TX08-halftone-dots-resolve-title.gif"
+   ],
+   "looks": []
+  },
+  {
+   "id": "TX09",
+   "name": "3D camera fly-through text",
+   "kind": "title",
+   "aliases": [
+    "3d text",
+    "camera text",
+    "fly through",
+    "depth text",
+    "3d camera",
+    "parallax text",
+    "text in space",
+    "trending 3d text"
+   ],
+   "look": "Lines of text float at different depths, alternating left and right; the camera creeps forward so each line grows, slides off the edge and goes soft as it passes, while the video behind grows slowly.",
+   "use_for": "hooks with 2 or 3 short phrases, statement openers",
+   "mood": [
+    "cinematic",
+    "premium",
+    "social"
+   ],
+   "frames": 75,
+   "command": "python3 effects/camera3d_text.py clip.mov --at <s> --dur 3.2 --lines \"built in code|no plugins|just Python\" -o out.mp4",
+   "demo": [
+    "docs/gifs/TX09-3d-camera-fly-through-text.gif"
+   ],
+   "looks": []
+  },
+  {
+   "id": "TX10",
+   "name": "Apple bounce rise",
+   "kind": "title",
+   "aliases": [
+    "apple",
+    "apple style",
+    "bounce",
+    "overshoot",
+    "card rise",
+    "tilted rise",
+    "product reveal",
+    "the all new"
+   ],
+   "look": "A title (gradient with glow) or any image card, tilted 2.6 degrees, rises from low in the frame, overshoots a little, dips and settles, like Apple's product reveals.",
+   "use_for": "product or feature reveals, screenshots and cards, 'the all new' style titles",
+   "mood": [
+    "apple",
+    "premium",
+    "clean",
+    "playful"
+   ],
+   "frames": 40,
+   "command": "python3 effects/apple_bounce.py --bg clip.mov --at <s> --dur 2.2 --text \"Introducing\" -o out.mp4  (or --image card.png)",
+   "demo": [
+    "docs/gifs/TX10-apple-bounce-rise-title.gif"
+   ],
+   "looks": []
+  },
+  {
+   "id": "TX11",
+   "name": "Blur up slide words",
+   "kind": "title",
+   "aliases": [
+    "blur up slide",
+    "blur slide",
+    "cinematic text",
+    "words blur in",
+    "soft rise",
+    "focus in text",
+    "blur reveal"
+   ],
+   "look": "Each word rises a little from below, out of focus, and sharpens as it fades in; the next word starts about halfway through the one before; a faint softness stays.",
+   "use_for": "cinematic captions and titles over b-roll",
+   "mood": [
+    "cinematic",
+    "soft",
+    "premium"
+   ],
+   "frames": 22,
+   "command": "python3 effects/hook_fx.py blurslide clip.mov --at <s> --dur 2.4 --text \"Your words\" --y 0.72 --size 90 -o out.mp4",
+   "demo": [
+    "docs/gifs/TX11-blur-up-slide-words.gif"
+   ],
+   "looks": []
+  },
+  {
+   "id": "TX12",
+   "name": "Continuous slide through",
+   "kind": "title",
+   "aliases": [
+    "continuous slide",
+    "slide through",
+    "pass through text",
+    "drift text",
+    "ticker",
+    "whip in",
+    "right slide",
+    "blur through",
+    "continuous zoom",
+    "in the sight of god"
+   ],
+   "look": "A word whips in from the left, slows and drifts through the middle without stopping, then eases off to the right.",
+   "use_for": "passing statements, lists of words, rhythm text",
+   "mood": [
+    "smooth",
+    "cinematic",
+    "minimal"
+   ],
+   "frames": 50,
+   "command": "python3 effects/hook_fx.py continuous clip.mov --at <s> --dur 2.4 --text \"Continuous\" --y 0.72 -o out.mp4  |  blur variant: python3 effects/hook_fx.py continuousblur clip.mov --at <s> --dur 3 --text \"Slide right through\" -o out.mp4",
+   "demo": [
+    "docs/gifs/TX12-continuous-slide-through.gif",
+    "docs/gifs/TX12-continuous-slide-through-blur-variant.gif"
+   ],
+   "looks": [
+    "plain: in from the left, no blur (S5jMgyGgFSc)",
+    "blur: in from the right with a strong blur that clears, out to the left blurring again (MLLV9xLqC7o)"
+   ]
+  },
+  {
+   "id": "TX13",
+   "name": "Selection highlight sweep",
+   "kind": "title",
+   "aliases": [
+    "highlight",
+    "selection",
+    "marker sweep",
+    "text highlight",
+    "cursor sweep",
+    "blue highlight",
+    "reveal bar",
+    "emphasis box"
+   ],
+   "look": "A dark-blue rounded bar sweeps across the line like a text cursor, leaving a pale-blue highlight box behind it; the words inside turn pale blue, with a soft glow.",
+   "use_for": "emphasising a caption or key phrase, revealing a name or logo",
+   "mood": [
+    "clean",
+    "ui",
+    "premium"
+   ],
+   "frames": 10,
+   "command": "python3 effects/caption_fx.py highlight \"Cinematic Captions\" --bg clip.mov --at <s> --dur 1.4 --y 0.72 -o out.mp4",
+   "demo": [
+    "docs/gifs/TX13-selection-highlight-sweep.gif"
+   ],
+   "looks": []
+  },
+  {
+   "id": "TX14",
+   "name": "Word drop stop-motion",
+   "kind": "title",
+   "aliases": [
+    "word drop",
+    "drop down",
+    "stop motion",
+    "choppy text",
+    "falling words",
+    "hand animated",
+    "word down"
+   ],
+   "look": "Words fall into place one after another from above, fading in, and the motion steps every second frame like stop motion.",
+   "use_for": "captions with a handmade feel, client reels",
+   "mood": [
+    "playful",
+    "handmade",
+    "creator"
+   ],
+   "frames": 27,
+   "command": "python3 effects/caption_fx.py dropstop \"Your words\" --bg clip.mov --at <s> --dur 2.2 --y 0.72 -o out.mp4",
+   "demo": [
+    "docs/gifs/TX14-word-drop-stop-motion.gif"
+   ],
+   "looks": []
+  },
+  {
+   "id": "TX15",
+   "name": "Shaky erode rise title",
+   "kind": "title",
+   "aliases": [
+    "shaky text",
+    "erode",
+    "handwritten",
+    "stop motion text",
+    "jitter",
+    "wiggle text",
+    "marker text",
+    "hand drawn title"
+   ],
+   "look": "Handwritten letters start as thin strokes and thicken in a few choppy steps (held 4 frames each) while each letter jitters slightly up and down, and the line rises into place.",
+   "use_for": "playful, handmade or vlog-style titles",
+   "mood": [
+    "playful",
+    "handmade",
+    "vlog"
+   ],
+   "frames": 25,
+   "command": "python3 effects/caption_fx.py shakyerode \"Custom Title\" --bg clip.mov --at <s> --dur 2 --y 0.72 -o out.mp4",
+   "demo": [
+    "docs/gifs/TX15-shaky-erode-rise-title.gif"
+   ],
+   "looks": []
+  },
+  {
+   "id": "FX01",
+   "name": "Box flash invert boxes",
+   "kind": "fx",
+   "aliases": [
+    "box flash",
+    "invert box",
+    "negative box",
+    "difference box",
+    "flash box",
+    "flashy edit",
+    "exclusion",
+    "highlight box",
+    "inverted crop",
+    "photo negative"
+   ],
+   "look": "Rectangles of the picture flip to a photo negative for 5 or 6 frames at a time: the head, a sky corner, a wide band, a 1-frame thin bar, sometimes two boxes at once or the whole frame, with 8-frame gaps.",
+   "use_for": "fast b-roll montages, hook energy, highlighting a face or object for a beat",
+   "mood": [
+    "hype",
+    "flashy",
+    "music video",
+    "energetic"
+   ],
+   "frames": 70,
+   "command": "python3 effects/box_flash.py clip.mov --at <s> --dur 3 -o out.mp4 [--boxes boxes.json] [--mode difference|exclusion]",
+   "demo": [
+    "docs/gifs/FX01-box-flash-invert-boxes.gif"
+   ],
+   "looks": []
+  },
+  {
+   "id": "FX02",
+   "name": "Four by three rounded window",
+   "kind": "fx",
+   "aliases": [
+    "4:3",
+    "4x3",
+    "four by three",
+    "aspect ratio",
+    "rounded window",
+    "framed video",
+    "letterbox",
+    "rounded rectangle",
+    "card frame"
+   ],
+   "look": "The clip plays inside a 4:3 window with small rounded corners (about 3 % of the frame width), centred on black or any colour.",
+   "use_for": "b-roll or screen clips in a vertical Short, a framed documentary look",
+   "mood": [
+    "clean",
+    "documentary",
+    "minimal"
+   ],
+   "frames": 0,
+   "command": "python3 effects/window_43.py clip.mov --at <s> --dur 3 -o out.mp4 [--focus 0.32] [--radius 0.06] [--bg 0,0,0]",
+   "demo": [
+    "docs/gifs/FX02-four-by-three-rounded-window.gif"
+   ],
+   "looks": []
+  },
+  {
+   "id": "FX03",
+   "name": "Face lock follow stabilize",
+   "kind": "fx",
+   "aliases": [
+    "face lock",
+    "follow",
+    "stabilize",
+    "planar tracker",
+    "head lock",
+    "tracking",
+    "locked face",
+    "following me",
+    "camera follow"
+   ],
+   "look": "The head stays fixed in the frame while the background moves around it, zoomed in so no black edges show.",
+   "use_for": "walking or handheld shots of the subject, b-roll montages, pairs well with the box flash",
+   "mood": [
+    "dynamic",
+    "music video",
+    "vlog"
+   ],
+   "frames": 0,
+   "command": "python3 effects/face_lock.py clip.mov --at <s> --dur 3 -o out.mp4 [--zoom 1.18]",
+   "demo": [
+    "docs/gifs/FX03-face-lock-follow-stabilize.gif"
+   ],
+   "looks": []
+  },
+  {
+   "id": "FX04",
+   "name": "Super slow motion optical flow",
+   "kind": "fx",
+   "aliases": [
+    "slow motion",
+    "slowmo",
+    "slo mo",
+    "optical flow",
+    "retime",
+    "speed warp",
+    "frame interpolation",
+    "smooth slow"
+   ],
+   "look": "Footage slowed about 12x with new in-between frames, so it stays smooth.",
+   "use_for": "b-roll under the voice so viewers can take in the shot; dramatic moments",
+   "mood": [
+    "cinematic",
+    "calm",
+    "dramatic"
+   ],
+   "frames": 0,
+   "command": "python3 effects/slowmo.py clip.mov --at <s> --src-dur 0.33 --factor 12 -o out.mp4",
+   "demo": [
+    "docs/gifs/FX04-super-slow-motion-optical-flow.gif"
+   ],
+   "looks": []
+  },
+  {
+   "id": "FX05",
+   "name": "REC recording overlay",
+   "kind": "fx",
+   "aliases": [
+    "rec",
+    "record",
+    "recording",
+    "camcorder",
+    "red dot",
+    "rec overlay",
+    "vlog overlay",
+    "flicker text",
+    "viewfinder"
+   ],
+   "look": "A small white REC with a red dot, held over the whole video; it flickers on at the start with the same frames as the glitch title.",
+   "use_for": "vlog or behind-the-scenes feel, montages; pairs well with the box flash",
+   "mood": [
+    "vlog",
+    "raw",
+    "music video"
+   ],
+   "frames": 0,
+   "command": "python3 effects/rec_overlay.py clip.mov --at <s> --dur 6 -o out.mp4 [--x 0.5 --y 0.5] [--size 70] [--no-flicker]",
+   "demo": [
+    "docs/gifs/FX05-rec-recording-overlay.gif"
+   ],
+   "looks": []
+  },
+  {
+   "id": "FX06",
+   "name": "Hook zoom-out intro",
+   "kind": "fx",
+   "aliases": [
+    "hook zoom",
+    "zoom out intro",
+    "punch out",
+    "intro zoom",
+    "opening zoom",
+    "scale down",
+    "hook animation",
+    "lens distortion",
+    "bulge",
+    "fisheye zoom"
+   ],
+   "look": "The first shot starts zoomed in 2.5x and snaps most of the way back in about 4 frames with motion blur, then glides the last bit over 2 seconds.",
+   "use_for": "the first 2 seconds of every video",
+   "mood": [
+    "energetic",
+    "clean",
+    "creator"
+   ],
+   "frames": 60,
+   "command": "python3 effects/hook_fx.py hookzoom clip.mov --at <s> --dur 3 -o out.mp4  |  lens variant: python3 effects/hook_fx.py hookzoomlens clip.mov --at <s> --dur 3 -o out.mp4",
+   "demo": [
+    "docs/gifs/FX06-hook-zoom-out-intro.gif",
+    "docs/gifs/FX06-hook-zoom-out-intro-lens-variant.gif"
+   ],
+   "looks": [
+    "plain zoom out",
+    "lens: plus a barrel lens bulge that settles in 8 frames (Lens Distortion 0.24)"
+   ]
+  },
+  {
+   "id": "FX07",
+   "name": "Text behind subject",
+   "kind": "fx",
+   "aliases": [
+    "text behind",
+    "behind the person",
+    "rotoscope text",
+    "magic mask text",
+    "depth text",
+    "title behind head",
+    "occlusion"
+   ],
+   "look": "Big bold italic words sit behind the subject (the subject passes in front of them), with an optional small title on top in front of the subject, last word in lime.",
+   "use_for": "hook titles, walk-in shots, thumbnails come alive (needs space around the person: in a tight close-up the head hides the title)",
+   "mood": [
+    "premium",
+    "creator",
+    "depth"
+   ],
+   "frames": 0,
+   "command": "python3 effects/hook_fx.py behind clip.mov --at <s> --dur 3 --text \"Big Title|Behind You\" --front \"Watch This:\" --y 0.42 --size 150 -o out.mp4",
+   "demo": [
+    "docs/gifs/FX07-text-behind-subject.gif"
+   ],
+   "looks": []
+  },
+  {
+   "id": "FX08",
+   "name": "Stutter push-in",
+   "kind": "fx",
+   "aliases": [
+    "stutter",
+    "glitch repeat",
+    "frame repeat",
+    "stuck frame",
+    "loop frames",
+    "shake repeat",
+    "stutter zoom"
+   ],
+   "look": "One 2-frame slice repeats again and again (a stuck, glitchy moment) while the picture rushes in and then creeps closer.",
+   "use_for": "a word where the audio glitches, beat hits, emphasis",
+   "mood": [
+    "hype",
+    "glitchy",
+    "music video"
+   ],
+   "frames": 2,
+   "command": "python3 effects/strobe_fx.py stutter clip.mov --at <s> --dur 1.6 -o out.mp4 [--zoom 1.28]",
+   "demo": [
+    "docs/gifs/FX08-stutter-push-in.gif"
+   ],
+   "looks": []
+  },
+  {
+   "id": "FX09",
+   "name": "Red flash strobe",
+   "kind": "fx",
+   "aliases": [
+    "red flash",
+    "strobe",
+    "flash cuts",
+    "darken red",
+    "linear dodge glow",
+    "trippy",
+    "rapid cuts",
+    "red tint flicker"
+   ],
+   "look": "Two shots cut in 2-frame slices, alternating; some slices glow hot, others turn red. Trippy strobe on a beat.",
+   "use_for": "music drops, intense moments, montage peaks",
+   "mood": [
+    "intense",
+    "trippy",
+    "music video"
+   ],
+   "frames": 2,
+   "command": "python3 effects/strobe_fx.py redflash A.mov --at <s> B.mov --b-at <s> --dur 2 -o out.mp4",
+   "demo": [
+    "docs/gifs/FX09-red-flash-strobe.gif"
+   ],
+   "looks": []
+  },
+  {
+   "id": "FX10",
+   "name": "Light rays wipe",
+   "kind": "fx",
+   "aliases": [
+    "light rays",
+    "god rays",
+    "microwaves",
+    "beams",
+    "rays burst",
+    "glow rays",
+    "sun rays",
+    "krokodove microwaves"
+   ],
+   "look": "A strong white burst of rays washes over the shot from the bright areas and slowly pulls back over about 2 seconds.",
+   "use_for": "dramatic openings, reveals, soft transitions",
+   "mood": [
+    "dramatic",
+    "dreamy",
+    "cinematic"
+   ],
+   "frames": 50,
+   "command": "python3 effects/shine_fx.py rays \"\" --bg clip.mov --at <s> --dur 2.4 -o out.mp4",
+   "demo": [
+    "docs/gifs/FX10-light-rays-wipe.gif"
+   ],
+   "looks": []
+  },
+  {
+   "id": "FX11",
+   "name": "Liquid glass pill",
+   "kind": "fx",
+   "aliases": [
+    "liquid glass",
+    "glass pill",
+    "ui animation",
+    "apple glass",
+    "glass button",
+    "refraction",
+    "glass bubble",
+    "ios glass"
+   ],
+   "look": "A small glass ball rises under the words, then stretches into a rounded glass pill around them; the picture bends at its edges and a thin bright rim catches the light.",
+   "use_for": "UI-style titles, key words, buttons, Apple style intros",
+   "mood": [
+    "clean",
+    "apple",
+    "premium",
+    "ui"
+   ],
+   "frames": 24,
+   "command": "python3 effects/liquid_glass.py clip.mov --at <s> --dur 2 --text \"In Seconds\" --y 0.72 -o out.mp4",
+   "demo": [
+    "docs/gifs/FX11-liquid-glass-pill.gif"
+   ],
+   "looks": []
+  },
+  {
+   "id": "FX12",
+   "name": "3D parallax collage pan",
+   "kind": "fx",
+   "aliases": [
+    "parallax",
+    "3d collage",
+    "documentary 3d",
+    "2.5d",
+    "camera truck",
+    "layered pan",
+    "image planes",
+    "depth pan"
+   ],
+   "look": "Cut-out layers (background, a person, objects, text) sit at different depths; the camera trucks sideways and pushes in a little, so near layers slide past fast and far ones slowly, and text slides in from the side.",
+   "use_for": "documentary or story openers, turning stills and cut-outs into a 3D scene",
+   "mood": [
+    "documentary",
+    "cinematic",
+    "storytelling"
+   ],
+   "frames": 0,
+   "command": "python3 effects/parallax_collage.py --layers layers.json --dur 3 [--truck 1.3] -o out.mp4",
+   "demo": [
+    "docs/gifs/FX12-3d-parallax-collage-pan.gif"
+   ],
+   "looks": []
+  },
+  {
+   "id": "FX13",
+   "name": "Aesthetic moving gradient background",
+   "kind": "fx",
+   "aliases": [
+    "background",
+    "gradient background",
+    "noise background",
+    "aesthetic",
+    "grainy gradient",
+    "fast noise",
+    "moving backdrop",
+    "plate"
+   ],
+   "look": "A slow-drifting background: deep black on one side melting into grainy royal blue, with film grain. Any 3 colours.",
+   "use_for": "the plate behind titles, cards and screenshots in faceless or aesthetic reels",
+   "mood": [
+    "aesthetic",
+    "moody",
+    "clean"
+   ],
+   "frames": 0,
+   "command": "python3 effects/noise_bg.py --dur 4 -o bg.mp4 [--colors \"0,0,0;18,45,150;70,110,215\"] [--rate 0.06]",
+   "demo": [
+    "docs/gifs/FX13-aesthetic-moving-gradient-background.gif"
+   ],
+   "looks": []
+  },
+  {
+   "id": "FX14",
+   "name": "Screen replacement corner pin",
+   "kind": "fx",
+   "aliases": [
+    "screen replacement",
+    "corner pin",
+    "planar tracker",
+    "put a screenshot on a laptop",
+    "phone screen",
+    "monitor insert",
+    "screen insert",
+    "mockup"
+   ],
+   "look": "A screenshot or clip is pinned into a laptop, phone or monitor screen in a shot, following its corners, toned a little darker and softer so it sits in the scene.",
+   "use_for": "showing a website, app or screenshot on a real device in b-roll or a 3D scene",
+   "mood": [
+    "clean",
+    "tech",
+    "realistic"
+   ],
+   "frames": 0,
+   "command": "python3 effects/corner_pin.py shot.mov --at <s> --dur 2 --content screenshot.png --corners pins.json -o out.mp4",
+   "demo": [
+    "docs/gifs/FX14-screen-replacement-corner-pin.gif"
+   ],
+   "looks": []
+  },
+  {
+   "id": "FX15",
+   "name": "Film look grade",
+   "kind": "fx",
+   "aliases": [
+    "film look",
+    "cinematic grade",
+    "35mm",
+    "film look creator",
+    "halation",
+    "grain",
+    "color grade",
+    "lut look",
+    "vintage"
+   ],
+   "look": "A 35 mm style grade: gently lifted blacks, soft highlight roll-off, slightly muted olive greens, warm skin, a faint warm glow around bright edges (halation), a half-strength vignette and fine grain.",
+   "use_for": "making talking heads and b-roll feel cinematic and consistent",
+   "mood": [
+    "cinematic",
+    "warm",
+    "film"
+   ],
+   "frames": 0,
+   "command": "python3 effects/film_look.py clip.mov --at <s> --dur 3 -o out.mp4 [--strength 1] [--grain 0.035] [--halation 0.18] [--vignette 0.5] [--compare]",
+   "demo": [
+    "docs/gifs/FX15-film-look-grade.gif"
+   ],
+   "looks": []
+  },
+  {
+   "id": "FX16",
+   "name": "Chromatic aberration",
+   "kind": "fx",
+   "aliases": [
+    "chromatic aberration",
+    "rgb split",
+    "color fringe",
+    "lens fringe",
+    "split channels",
+    "prism edge",
+    "ca"
+   ],
+   "look": "Thin red and cyan fringes along edges that grow toward the corners, like a cheap lens; the centre stays clean.",
+   "use_for": "a finishing touch on a grade, gritty or music-video looks",
+   "mood": [
+    "gritty",
+    "cinematic",
+    "music video"
+   ],
+   "frames": 0,
+   "command": "python3 effects/chromatic.py clip.mov --at <s> --dur 3 -o out.mp4 [--amount 0.006]",
+   "demo": [
+    "docs/gifs/FX16-chromatic-aberration.gif"
+   ],
+   "looks": []
+  },
+  {
+   "id": "FX17",
+   "name": "Vignette blink flicker",
+   "kind": "fx",
+   "aliases": [
+    "vignette blink",
+    "blink",
+    "flicker vignette",
+    "dark edges flash",
+    "premium flicker",
+    "camera blink overlay"
+   ],
+   "look": "Dark soft edges flash on for a frame or two at a time, a few times, then the picture is clean again: a subtle blink.",
+   "use_for": "hook openers and title moments, a premium feel on b-roll",
+   "mood": [
+    "cinematic",
+    "subtle",
+    "premium"
+   ],
+   "frames": 14,
+   "command": "python3 effects/strobe_fx.py vigblink clip.mov --at <s> --dur 1 -o out.mp4",
+   "demo": [
+    "docs/gifs/FX17-vignette-blink-flicker.gif"
+   ],
+   "looks": []
+  }
+ ]
+}
